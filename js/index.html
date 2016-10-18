@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ticket Vendor</title>
+    <link href = "css/bootstrap.min.css" rel = "stylesheet" type = "text/css">
+    <link href = "css/bootstrap-theme.min.css" rel = "stylesheet" type = "text/css">
+    <link href = "css/styles.css" rel = "stylesheet" type = "text/css">
+    <script src = "js/jquery-3.1.1.js"></script>
+    <script src = "js/scripts.js"></script>
+  </head>
+  <body>
+    <div class = "container">
+      <h1>Purchase your tickets!</h1>
+      <form id = "userInput">
+        <div class = "row">
+          <div class = "col-sm-4">
+            <div class = "form-group" id = "firstName">
+              <label for = "firstName">First Name</label>
+              <input id = "firstName" class = "form-control" type "text">
+            </div>
+          </div>
+
+          <div class = "col-sm-4">
+            <div class = "form-group" id = "lastName">
+              <label for = "lastName">Last Name</label>
+              <input id = "lastName" class = "form-control" type "text">
+            </div>
+          </div>
+
+          <div class = "col-sm-4">
+            <div class = "form-group" id = "email">
+              <label for = "email">Email Address</label>
+              <input id = "email" class = "form-control" type "text">
+            </div>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class = "row">
+          <div class = "col-sm-3">
+            <label for = "continent">Ticket Type</label>
+              <select class = "form-control" id = "type">
+              <option>-</option>
+              <option>Adult</option>
+              <option>Youth</option>
+              <option>Senior</option>
+              <option>Student</option>
+              <option>Matinee</option>
+              </select>
+          </div>
+          <div class = "col-sm-3">
+            <div class = "form-group" id = "number">
+              <label for = "number">Number of Tickets</label>
+              <input id = "number" class = "form-control" type "text">
+            </div>
+          </div>
+          <div class = "col-sm-3">
+            <div class = "form-group" id = "title">
+              <label for = "title">Movie Title</label>
+              <select class = "form-control" id = "title">
+              <option>-</option>
+              <option>Movie 1</option>
+              <option>Movie 2</option>
+              <option>Movie 3</option>
+              <option>Movie 4</option>
+              <option>Movie 5</option>
+              </select>
+            </div>
+          </div>
+          <div class = "col-sm-3">
+            <div class = "form-group" id = "showing">
+              <label for = "showing">Showtime</label>
+              <select class = "form-control" id = "shpwing">
+              <option>-</option>
+              <option>Showing 1</option>
+              <option>Showing 2</option>
+              <option>Showing 3</option>
+              <option>Showing 4</option>
+              <option>Showing 5</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <button type = "submit" class = "btn btn-block btn-gray">Purchase Ticket!</button>
+      </form>
+      <hr>
+      <div id = "ticketOutput">
+        <h2>Your Ticket:</h2>
+        <ul>
+          
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
