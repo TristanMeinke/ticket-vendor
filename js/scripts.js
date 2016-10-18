@@ -43,6 +43,8 @@ function createTicket() {
 }
 
 function printTicket() {
+  // THIS DOES NOT WORK...
+  // Maybe use a 'for...in loop' to traverse the object?
    $("#ticketOutput").append("<li>" + "First Name:" + usersTicket.fName + "</li>");
    $("#ticketOutput").append("<li>" + "Last Name:" + usersTicket.lName + "</li>");
    $("#ticketOutput").append("<li>" + "Number Admitted:" + usersTicket.numTickets + "</li>");
@@ -52,7 +54,7 @@ function printTicket() {
    $("#ticketOutput").append("<li>" + "Price:" + usersTicket.price + "</li>");
 }
 
-//Front-end
+//Front-end logic
 
 $(document).ready(function() {
   $("#userInput form").submit(function(event) {
