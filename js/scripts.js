@@ -1,28 +1,28 @@
 var standardPrice = 9.50;
 var lowPrice = 7.00;
-var numTickets;
 
-var movies = ["", "", "", "", ""]
+// var movies = ["", "", "", "", ""]
 
-function Ticket(fName, lName, movieTitle, showTime, ticketType, rating, price) {
+function Ticket(fName, lName, movieTitle, showTime, ticketType, price) {
   this.fName = fName;
   this.lName = lName;
 
-  this.movieTitle = title;
+  this.movieTitle = movieTitle;
   this.showTime = showTime;
   this.ticketType = ticketType;
-  this.rating = rating;
   this.price = price;
 }
 
 function priceTicket() {
   if (ticketType === "Adult")
   {
-    Ticket.price = standardPrice;
+    ticketPrice = standardPrice;
+    return ticketPrice;
   }
   else
   {
-    Ticket.price = lowPrice;
+    ticketPrice = lowPrice;
+    return ticketPrice;
   }
 }
 
@@ -30,9 +30,26 @@ function createTicket() {
   // This function will build the ticket object
   // by calling the constructor/prototype.
 
-  var usersTicket = new Ticket(); // THIS LINE...
+  var firstName = $("input#firstName").val();
+  var lastName = $("input#lastName").val();
+  var numTickets = parseInt($("input#userInput").val());
+  var movieTitle = $("select#title").val();
+  var ticketType = $("select#type").val();
+  var price = priceTicket();
+
+  var usersTicket = new Ticket(firstName, lastName, movieTitle, showTime, ticketType, price); // THIS LINE...
   // Should construct the ticket object based on
   // the data provided by the user.
+}
+
+function printTicket() {
+   $("#ticketOutput").append("<li>" + "First Name:" + usersTicket.fName + "</li>");
+   $("#ticketOutput").append("<li>" + "Last Name:" + usersTicket.lName + "</li>");
+   $("#ticketOutput").append("<li>" + "Number Admitted:" + usersTicket.numTickets + "</li>");
+   $("#ticketOutput").append("<li>" + "Title:" + usersTicket.showTime + "</li>");
+   $("#ticketOutput").append("<li>" + "Title:" + usersTicket.movieTitle + "</li>");
+   $("#ticketOutput").append("<li>" + "Ticket Type:" + usersTicket.ticketType + "</li>");
+   $("#ticketOutput").append("<li>" + "Price:" + usersTicket.price + "</li>");
 }
 
 //Front-end
@@ -44,7 +61,7 @@ $(document).ready(function() {
     // interpreted and manipulated.
     event.preventDefault();
     // $("#ticketOutput").show();
-    priceTicket();
-    numTickets = parseInt($("input#userInput").val());
+    createTicket();
+    printTicket();
   });
 });
